@@ -15,11 +15,10 @@ namespace StoreDAL
     {
         public static bool Add(UserModel user)
         {
-            SqlServer db = new SqlServer();
             bool result = false;
             string sql = $"insert into [user](username, password) values('{user.Username}', '{user.Password}')";
 
-            if (db.NotQuery(sql) != -1)
+            if (SqlServer.NotQuery(sql) != -1)
             {
                 result = true;
             }
