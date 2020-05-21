@@ -34,7 +34,7 @@
 		font-family:Arial; 
         font-style:italic; 
         color:white;
-        size:25px;          
+        font-size:25px;          
         border:0; 
         letter-spacing:8px; 
         font-weight:bolder; 

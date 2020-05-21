@@ -15,21 +15,22 @@ namespace StoreDAL
     {
         public static bool Add(UserModel user)
         {
+            SqlServer db = new SqlServer();
             bool result = false;
-            string sql = "insert into user (username,password) value('" + user.Username + "','" + user.Password + "') ";
-            int i = MsSqlHelper.ExecuteSql(sql);
-            if (i > 0)
+            string sql = $"insert into [user](username, password) values('{user.Username}', '{user.Password}')";
+
+            if (db.NotQuery(sql) != -1)
             {
                 result = true;
             }
             return result;
         }
 
-       /* readonly SqlServer db = new SqlServer();
-        public int Add(UserModel user)
-        {
-            string sql = "insert into user (username,password) value('" + user.Username + "','" + user.Password + "') ";
-            return db.NotQuery(sql);
-        }*/
+        /* readonly SqlServer db = new SqlServer();
+         public int Add(UserModel user)
+         {
+             string sql = "insert into user (username,password) value('" + user.Username + "','" + user.Password + "') ";
+             return db.NotQuery(sql);
+         }*/
     }
 }
