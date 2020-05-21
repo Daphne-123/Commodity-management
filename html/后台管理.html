@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后台管理界面</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
       .head{
-        height: 50px;
-        background-color: #000;
+        height: 10vh;
+        background-color: rgb(36, 47, 66);
       }
       .head-left{
         float: left;
@@ -22,9 +29,9 @@
       }
       .head span{
         color: #fff;
-        font-weight: 800;
+        font-weight: 600;
         font-size: 20px;
-        line-height: 50px;
+        line-height: 10vh;
       }
       .head-right{
         float: right;
@@ -33,6 +40,32 @@
         font-size: 16px;
         padding-right: 30px;
       }
+      aside{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        height: 90vh;
+        background-color: rgb(50, 65,87);
+      }
+      aside .Navigation{
+        width: 100%;
+        padding: 0;
+        text-align: center;
+      }
+      aside .Navigation button{
+        color: #fff;
+        font-weight: 600;
+      }
+      aside .Navigation button:hover{
+        color: #fff;  
+      }
+      aside .Navigation .Navigation-option{
+        background-color:#fff;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      main{
+        background-color:#ddd;
+      }
     </style>
 </head>
 <body>
@@ -40,25 +73,67 @@
         <div class="head container-fluid">
            <div class="head-left">
                <img src="../image/logo.png" alt="">
-               <span>商品后台管理系统</span>
+               <span>商家后台管理系统</span>
            </div>
            <div class="head-right">
              <span>当前用户：胡欣哲</span>
            </div>
         </div>
     </header>
-    <main>
-      <div class="main container-fluid">
-        <div class="row">
-          <div class="col-sm-2">
-            1
-          </div>
-          <div class="col-sm-10">
-            2
+    <div class="container-fluid">
+      <div class="row">
+    <aside class="col-sm-2">
+      <div class="accordion" id="accordionExample">
+        <div class="Navigation">
+          <div class="card-header  Navigation-title" id="headingOne">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                首页
+              </button>
           </div>
         </div>
+        <div class="Navigation">
+          <div class="card-header Navigation-title" id="headingTwo">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                商品管理
+              </button>
+          </div>
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body Navigation-option">商品列表</div>
+          </div>
         </div>
-    </div>
-    </main>
+        <div class="Navigation">
+          <div class="card-header Navigation-title" id="headingThree">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+               订单管理
+              </button>
+          </div>
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body Navigation-option">订单查询</div>
+            <div class="card-body Navigation-option">删除订单</div>
+          </div>
+        </div>
+        <div class="Navigation">
+          <div class="card-header Navigation-title" id="headingFour">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+               会员管理
+              </button>
+          </div>
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+            <div class="card-body Navigation-option">会员列表</div>
+          </div>
+        </div>
+        <div class="Navigation">
+          <div class="card-header Navigation-title" id="headingFour">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+               投诉电话
+              </button>
+          </div>
+        </div>
+      </div>
+  </aside>
+  <main class="col-sm-10">
+  </main>
+</div>
+</div>
 </body>
 </html>
