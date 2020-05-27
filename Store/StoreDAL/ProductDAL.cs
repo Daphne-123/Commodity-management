@@ -12,8 +12,6 @@ namespace StoreDAL
 {
     public class ProductDAL
     {
-        readonly SqlServer db = new SqlServer();
-
         public List<ProductInfo> GetProductList()
         {
             string sql = "select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity";
@@ -55,7 +53,7 @@ namespace StoreDAL
         {
             string sqlStr = $"update Commodity set cImgUrl='{cls.cImgUrl}', cName='{cls.cName}', cNumber='{cls.cNumber}', cTime='{cls.cTime}', cDeptId='{cls.cDeptId}' where cId={cls.cId}";
 
-            return db.NotQuery(sqlStr);
+            return SqlServer.NotQuery(sqlStr);
         }
 
         public int Delete(int cId)
