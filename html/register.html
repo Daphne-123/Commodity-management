@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,7 +33,7 @@
 		font-family:Arial; 
         font-style:italic; 
         color:white;
-        size:25px;          
+        font-size:25px;          
         border:0; 
         letter-spacing:8px; 
         font-weight:bolder; 
@@ -53,7 +54,7 @@
              code = "";    
              var codeLength = 4; 
              var checkCode = document.getElementById("code");    
-             var random = new Array(2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','M','N','P','Q','R','S','T','U','V','W','X','Y','Z'); 
+             var random = new Array(2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','J','K','M','N','P','Q','R','S','T','U','V','W','X','Y','Z'); 
              for(var i = 0; i < codeLength; i++) {   
                 var index = Math.floor(Math.random()*31);   
                 code += random[index];
@@ -61,16 +62,17 @@
             checkCode.value = code;
 
              $("username").onblur=function(){
-       		var usertext = this.value;
-       		if(usertext.length<=0||usertext.length>8){
-       			$('empWorning').style.display="block";
-       		}
-       		else{
-       			$('empWorning').style.display="none";
-       		}
-       }
-        } 
-      
+       		    var usertext = this.value;
+                if (usertext.length < 0 || usertext.length > 8)
+                {
+       		        $('empWorning').style.display="block";
+                }
+                else
+                {
+       		        $('empWorning').style.display="none";
+       	        }
+            }
+        }     
         function validate(){
             var password=$("password").value;
             var password1=$("password1").value;
@@ -85,12 +87,15 @@
             var inputCode = document.getElementById("input").value.toUpperCase();          
             if(inputCode.length <= 0) { 
                 alert("请输入验证码！");   
-            }else if(inputCode != code ) {   
+            }
+            else if (inputCode != code) {   
                 alert("验证码输入错误！请重新输入");   
                 createCode();  
                 document.getElementById("input").value = ""; 
-            }else {   
-                alert("验证码正确，输入成功"); 
+            }
+            else {
+                return true;
+                
             } 
         } 
         </script> 
@@ -101,16 +106,16 @@
 			<h6 class="text-secondary">欢迎进入</h6>
 			<h3>创建你的用户</h3>
 		</div>
-		<form>
+		<form runat="server">
 		  <div class="form-group">
-		    <label for="exampleInputEmail1">用户名:</label>
-		    <input type="text" class="form-control username" id="username" aria-describedby="emailHelp" placeholder="请输入用户名"  onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')">
-		    <small id="emailHelp" class="form-text text-muted">请输入1-8字符，可使用汉字，字母或数字</small>
+		    <label for="exampleInputEmail1">用户名:</label><br />
+            <asp:TextBox class="form-control username" id="username" aria-describedby="emailHelp" placeholder="请输入用户名"  onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9\u4E00-\u9FA5]/g,'')" runat="server"></asp:TextBox>
+		    <small  class="form-text text-muted">请输入1-8字符，可使用汉字，字母或数字</small>
 		    <small class="worning" id="empWorning">⚠：用户名长度只能是1-8</small>
 		  </div>
 		  <div class="form-group">
-		    <label for="exampleInputPassword1">密码:</label>
-		    <input type="password" class="form-control" id="password" placeholder="请设置您的密码" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')">
+		    <label for="exampleInputPassword1">密码:</label><br />
+              <asp:TextBox class="form-control" id="password" placeholder="请设置您的密码" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')" onpaste="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')" oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')" runat="server" TextMode="Password"></asp:TextBox>
 		    <small id="emailHelp" class="form-text text-muted">密码长度为3~10字符，可使用字母或数字</small>
 		  </div>
 		  <div class="form-group">
@@ -123,12 +128,15 @@
 		    	<div class="row">
 		    		<input type = "text" id = "input" class="form-control col-sm-8"  placeholder="请输入验证码"/> 
 		    		<div class="col-sm-1"></div>
-            		<input type="button" id="code" onclick="createCode()" class="verification-Code col-sm-3 verification-Code" /> 
+            		<input type="button" id="code" onclick="createCode()" class="verification-Code col-sm-3 verification-Code" style="left: 0px; top: 0px; width: 100%" /> 
 		    	</div>
 		    </div>
 		  </div>
-		  	<button type="submit" class="btn btn-primary reg-verification"  onclick = "validate()">注&emsp;&emsp;册</button>
+		  <input type="button"  class="btn btn-primary reg-verification" value="注&emsp;&emsp;册" OnClick="Button1_Click">
+            <br>
 	    	</div>
 		</form>
+    <p>
+        &nbsp;</p>
 </body>
 </html>

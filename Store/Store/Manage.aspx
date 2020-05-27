@@ -1,10 +1,12 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Manage.aspx.cs" Inherits="Store.Manage" %>
+
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后台管理界面</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
@@ -63,8 +65,18 @@
         font-weight: 600;
         cursor: pointer;
       }
-      main{
-        background-color:#ddd;
+      aside .ops{
+          width:100%;
+          border:0;
+          border-bottom:1px solid rgb(50, 65,87);
+      }
+      main{ 
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      main .iframe-class{
+          width:100%;
+          height:100%;
       }
     </style>
 </head>
@@ -86,7 +98,7 @@
       <div class="accordion" id="accordionExample">
         <div class="Navigation">
           <div class="card-header  Navigation-title" id="headingOne">
-              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"  onclick=" iframe.location='First.aspx'">
                 首页
               </button>
           </div>
@@ -98,18 +110,19 @@
               </button>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-            <div class="card-body Navigation-option">商品列表</div>
+               <input type=button value="商品列表" onclick=" iframe.location='ProductList.ashx'" class="card-body Navigation-option  ops"/>
           </div>
         </div>
         <div class="Navigation">
           <div class="card-header Navigation-title" id="headingThree">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <button class="btn btn-link collapsed " type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                订单管理
               </button>
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <div class="card-body Navigation-option">订单查询</div>
-            <div class="card-body Navigation-option">删除订单</div>
+            <input type=button value="订单查询" onclick=" iframe.location='orderQuery.aspx'" class="card-body Navigation-option ops"/>
+
+              <input type=button value="删除订单" onclick=" iframe.location='orderDel.aspx'" class="card-body Navigation-option ops"/>
           </div>
         </div>
         <div class="Navigation">
@@ -119,22 +132,22 @@
               </button>
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-            <div class="card-body Navigation-option">会员列表</div>
+             <input type=button value="会员列表" onclick=" iframe.location='vipList.aspx'" class="card-body Navigation-option ops"/> 
           </div>
         </div>
         <div class="Navigation">
-          <div class="card-header Navigation-title" id="headingFour">
-              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <div class="card-header Navigation-title" id="headingFive">
+              <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"  onclick=" iframe.location='PhoneListHandler.ashx'">
                投诉电话
               </button>
+              
           </div>
         </div>
       </div>
   </aside>
   <main class="col-sm-10">
-    <iframe  name="iframe" width=100% height=100%></iframe><br>
-<input type=button value="click" onclick=" iframe.location='http://www.baidu.com'"/>
-<input type="button" value="click" onclick=" iframe.location='http://www.barteam.cn'"/>
+       <iframe name="iframe" class="iframe-class" src="First.aspx" ></iframe>
+      <br>
   </main>
 </div>
 </div>

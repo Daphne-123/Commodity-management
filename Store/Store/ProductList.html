@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>商品列表</title>
+    <link href="css/table.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function doDelete(id) {
+            if (confirm("你真的要删除id为："+id+"商品信息？"))
+            {
+                window.location = "DeleteProductListHandler.ashx";
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <caption>商品列表</caption>
+        <thead>
+            <tr>
+                <th>商品号</th>
+                <th>商品图片</th>
+                <th>商品名字</th>
+                <th>商品数量</th>
+                <th>上架日期</th>
+                <th>食品厂号</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {@ClassContent}
+        </tbody>
+    </table>
+</body>
+</html>

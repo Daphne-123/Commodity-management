@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StoreModel;
 using StoreUtility;
+using System.Data;
 
 namespace StoreDAL
 {
@@ -15,21 +16,63 @@ namespace StoreDAL
     {
         public static bool Add(UserModel user)
         {
+            SqlServer db = new SqlServer();
             bool result = false;
-            string sql = "insert into user (username,password) value('" + user.Username + "','" + user.Password + "') ";
-            int i = MsSqlHelper.ExecuteSql(sql);
-            if (i > 0)
+            string sql = $"insert into [user](username, password) values('{user.Username}', '{user.Password}')";
+           
+            if (db.NotQuery(sql)!= -1)
             {
                 result = true;
             }
             return result;
         }
+        
 
-       /* readonly SqlServer db = new SqlServer();
-        public int Add(UserModel user)
+        public static bool Login(string username,string password)
         {
-            string sql = "insert into user (username,password) value('" + user.Username + "','" + user.Password + "') ";
-            return db.NotQuery(sql);
-        }*/
+            SqlServer db = new SqlServer();
+            bool result = false;
+            string sql = "select * from [user] where username = '" + username + "' and password='"+ password +"' ";
+
+            DataTable dataTable = StoreUtility.MsSqlHelper.Query(sql).Tables[0];
+            if (dataTable.Rows.Count != 0)
+            {
+                result = true;
+            }
+            else
+            {
+                result = false;
+            }
+
+            return result;
+        }
+
+
+        //public static bool Search(string username)
+        //{
+        //    bool result = false;
+        //    string sql = "select * from [user] where username =  '"+username+ ' ;
+        //    /*if (db.NotQuery(sql) != -1)
+        //    {
+        //        result = true;
+        //    }
+        //    else
+        //    {
+        //        result = false;
+        //    }
+        //    return result;*/
+        //    DataTable dataTable = MsSqlHelper.Query(sql).Tables[0];
+        //    if (dataTable.Rows.Count == 0)
+        //    {
+        //        result = true;
+        //    }
+        //    else
+        //    {
+        //        result = false;
+        //    }
+        //    return result;
+        //}
     }
 }
+
+     

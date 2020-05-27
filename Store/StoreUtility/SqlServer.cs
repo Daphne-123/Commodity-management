@@ -21,7 +21,7 @@ namespace StoreUtility
         /// </summary>
         /// <param name="sql">sql字符串</param>
         /// <returns></returns>
-        public DataSet Query(string sql)
+        public  DataSet Query(string sql)
         {
             DataSet ds = new DataSet();
             using (connection = new SqlConnection(GetSqlConnectionString()))
@@ -48,7 +48,7 @@ namespace StoreUtility
         /// </summary>
         /// <param name="sql">sql语句</param>
         /// <returns>受影响的行数</returns>
-        public int NotQuery(string sql)
+        public  int NotQuery(string sql)
         {
             int result = -1;
             using (connection = new SqlConnection(GetSqlConnectionString()))

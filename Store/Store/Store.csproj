@@ -67,17 +67,69 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\Regitster.css" />
+    <Content Include="css\table.css" />
+    <Content Include="First.aspx" />
+    <Content Include="image\1.jpg" />
+    <Content Include="image\3.jpg" />
+    <Content Include="image\logo.png" />
+    <Content Include="js\Regitster.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Manage.aspx" />
+    <Content Include="orderDel.aspx" />
+    <Content Include="orderQuery.aspx" />
+    <Content Include="phoneList.html" />
+    <Content Include="ProductList.html" />
     <Content Include="Register.aspx" />
+    <Content Include="UpdateProductList.html" />
+    <Content Include="vipList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeleteProductListHandler.ashx.cs">
+      <DependentUpon>DeleteProductListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="First.aspx.cs">
+      <DependentUpon>First.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="First.aspx.designer.cs">
+      <DependentUpon>First.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneListHandler.ashx.cs">
+      <DependentUpon>PhoneListHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderDel.aspx.cs">
+      <DependentUpon>orderDel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderDel.aspx.designer.cs">
+      <DependentUpon>orderDel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="orderQuery.aspx.cs">
+      <DependentUpon>orderQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="orderQuery.aspx.designer.cs">
+      <DependentUpon>orderQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductList.ashx.cs">
+      <DependentUpon>ProductList.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
@@ -87,9 +139,23 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UpdateProductListHandler.ashx.cs">
+      <DependentUpon>UpdateProductListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="vipList.aspx.cs">
+      <DependentUpon>vipList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vipList.aspx.designer.cs">
+      <DependentUpon>vipList.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PhoneListHandler.ashx" />
+    <Content Include="DeleteProductListHandler.ashx" />
     <None Include="packages.config" />
+    <Content Include="ProductList.ashx" />
+    <Content Include="UpdateProductListHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -111,6 +177,7 @@
       <Name>StoreUtility</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
