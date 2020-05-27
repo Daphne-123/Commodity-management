@@ -12,6 +12,8 @@ namespace StoreDAL
 {
     public class ProductDAL
     {
+        readonly SqlServer db = new SqlServer();
+
         public List<ProductInfo> GetProductList()
         {
             string sql = "select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity";
@@ -36,9 +38,9 @@ namespace StoreDAL
             return product;
         }
 
-        public int Update(ProductInfo cls)
+        /*public int Update(ProductInfo cls)
         {
-            string sql = "update Commodity set cImgUrl=@ImgUrl,cName=@Name,cNumber=@Number,cTime=@Time,cDeptId=@DeptId where cId=@id";
+            string sql = "update Commodity set cImgUrl='@ImgUrl',cName='@Name',cNumber='@Number',cTime='@Time',cDeptId='@DeptId' where cId='@id'";
             SqlParameter cImgUrl = new SqlParameter("@ImgUrl", SqlDbType.NVarChar) { Value = cls.cImgUrl };
             SqlParameter cName = new SqlParameter("@Name", SqlDbType.NVarChar) { Value = cls.cName };
             SqlParameter cNumber = new SqlParameter("@Number", SqlDbType.Int) { Value = cls.cNumber };
@@ -46,7 +48,14 @@ namespace StoreDAL
             SqlParameter cDeptId = new SqlParameter("@DeptId", SqlDbType.Int) { Value = cls.cDeptId };
             SqlParameter cId = new SqlParameter("@id", SqlDbType.Int) { Value = cls.cId };
             return DBHelper.ExcuteNonQuery(sql, cImgUrl, cName, cNumber, cTime, cDeptId, cId);
+        }*/
+        public int Update(ProductInfo cls)
+        {
+            string sqlStr = $"update Commodity set cImgUrl='{cls.cImgUrl}', cName='{cls.cName}', cNumber='{cls.cNumber}', cTime='{cls.cTime}', cDeptId='{cls.cDeptId}' where cId={cls.cId}";
+
+            return db.NotQuery(sqlStr);
         }
+
         public int Delete(int cId)
         {
             string sql = "delete from Commodity where cId = @id";
