@@ -8,7 +8,7 @@
         function doDelete(id) {
             if (confirm("你真的要删除id为："+id+"商品信息？"))
             {
-                window.location = "DeleteProductListHandler.ashx";
+                window.location = "DeleteProductListHandler.ashx?cId="+id;
             }
 
         }

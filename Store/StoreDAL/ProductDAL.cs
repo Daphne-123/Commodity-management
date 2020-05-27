@@ -20,10 +20,12 @@ namespace StoreDAL
 
         public ProductInfo GetProductById(int id)
         {
-            string sql = "select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity cid = @id";
-           
-            SqlParameter sp = new SqlParameter("@stuID", SqlDbType.Int) { Value = id };
-            DataSet ds = DBHelper.GetDataSet(sql, sp);
+            string sql = //"select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity cid = @id";
+                $"select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity where cid={id}";
+
+            //SqlParameter sp = new SqlParameter("@id", SqlDbType.Int) { Value = id };
+            //DataSet ds = DBHelper.GetDataSet(sql, sp);
+            DataSet ds = SqlServer.Query(sql);
             ProductInfo product = new ProductInfo();
             if (ds.Tables.Count > 0)
             {
