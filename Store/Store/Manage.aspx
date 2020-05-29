@@ -110,7 +110,7 @@
               </button>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-               <input type=button value="商品列表" onclick=" iframe.location='ProductList.ashx'" class="card-body Navigation-option  ops"/>
+               <input type=button value="商品列表" onclick=" iframe.location='pro-list/ProductList.ashx'" class="card-body Navigation-option  ops"/>
           </div>
         </div>
         <div class="Navigation">
@@ -132,13 +132,13 @@
               </button>
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-             <input type=button value="会员列表" onclick=" iframe.location='vipList.aspx'" class="card-body Navigation-option ops"/> 
+             <input type=button value="会员列表" onclick=" iframe.location='vip-List/vipList.aspx'" class="card-body Navigation-option ops"/> 
           </div>
         </div>
         <div class="Navigation">
           <div class="card-header Navigation-title" id="headingFive">
               <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"  onclick=" iframe.location='PhoneListHandler.ashx'">
-               投诉电话
+               供应商信息
               </button>
               
           </div>

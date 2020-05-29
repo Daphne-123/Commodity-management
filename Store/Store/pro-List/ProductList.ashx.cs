@@ -19,7 +19,7 @@ namespace Store
             context.Response.ContentType = "text/html";
             
           
-            string html = System.IO.File.ReadAllText(context.Request.MapPath("ProductList.html"));
+            string html = System.IO.File.ReadAllText(context.Request.MapPath("ProductListHTML.html"));
 
             ProductBLL clsBll = new ProductBLL();
             List<ProductInfo> clsList = clsBll.GetProductList();
@@ -34,7 +34,7 @@ namespace Store
                 sbTrs.Append("<td>" + cls.cNumber.ToString() + "</td>");
                 sbTrs.Append("<td>" + cls.cTime.ToString() + "</td>");
                 sbTrs.Append("<td>" + cls.cDeptId.ToString() + "</td>");
-                sbTrs.Append("<td><a href='UpdateProductListHandler.ashx?cId=" +cls.cId + "'>修改</a> <a href='javascript:void(0)' onclick='doDelete(" + cls.cId + ")'> 删除</a></td>");
+                sbTrs.Append("<td><a href='UpdateProductListHandler.ashx?cId=" + cls.cId + "'>修改</a> <a href='javascript:void(0)' onclick='doDelete(" + cls.cId + ")'> 删除</a></td>");
                 sbTrs.Append("</tr>");
             }
             //4.把生成字符串，嵌入到静态页的tbody标签里

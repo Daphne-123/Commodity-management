@@ -3,11 +3,33 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link href="css/table.css" rel="stylesheet"/>
+    <link href="../css/tableCSS.css" rel="stylesheet" />
+    <style>
+        .ctable {
+            width: 660px;
+        }
+
+        input {
+            border: none;
+            text-align: center;
+            overflow: hidden;
+            height: 100%;
+            font-size: 25px;
+            width: 100%;
+        }
+
+        .cbtn {
+            cursor: pointer;
+            border-radius: 5px;
+            width: 250px;
+            background-color: #409EFF;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <form action="UpdateProductListHandler.ashx" method="post">
-        <table>
+        <table class="ctable">
             <caption>修改商品信息</caption>
             <tr>
                 <td>商品号：</td>
@@ -24,7 +46,7 @@
             </tr>
             <tr>
                 <td>商品数量：</td>
-                <td><input type="radio" name="cNumber" value="{cNumber}" /></td>
+                <td><input type="text" name="cNumber" value="{@cNumber}" /></td>
             </tr>
             <tr>
                 <td>上架日期：</td>
@@ -33,6 +55,9 @@
             <tr>
                 <td>所属厂家：</td>
                 <td><input type="text" name="cDeptId" value="{@cDeptId}" /></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" class="cbtn" value="提    交" /></td>
             </tr>
         </table>
     </form>

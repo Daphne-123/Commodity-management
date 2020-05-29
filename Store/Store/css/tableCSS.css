@@ -7,8 +7,9 @@
 }
 
     table caption {
-        font-size: 40px;
-        font-family: "微软雅黑";
+        font-size: 36px;
+        font-family: "华文楷体";
+        padding: 20px 0;
         color: #000;
     }
 

@@ -12,8 +12,6 @@ namespace StoreDAL
 {
     public class ProductDAL
     {
-        readonly SqlServer db = new SqlServer();
-
         public List<ProductInfo> GetProductList()
         {
             string sql = "select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity";
@@ -22,10 +20,12 @@ namespace StoreDAL
 
         public ProductInfo GetProductById(int id)
         {
-            string sql = "select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity cid = @id";
-           
-            SqlParameter sp = new SqlParameter("@stuID", SqlDbType.Int) { Value = id };
-            DataSet ds = DBHelper.GetDataSet(sql, sp);
+            string sql = //"select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity cid = @id";
+                $"select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity where cid={id}";
+
+            //SqlParameter sp = new SqlParameter("@id", SqlDbType.Int) { Value = id };
+            //DataSet ds = DBHelper.GetDataSet(sql, sp);
+            DataSet ds = SqlServer.Query(sql);
             ProductInfo product = new ProductInfo();
             if (ds.Tables.Count > 0)
             {
@@ -53,7 +53,7 @@ namespace StoreDAL
         {
             string sqlStr = $"update Commodity set cImgUrl='{cls.cImgUrl}', cName='{cls.cName}', cNumber='{cls.cNumber}', cTime='{cls.cTime}', cDeptId='{cls.cDeptId}' where cId={cls.cId}";
 
-            return db.NotQuery(sqlStr);
+            return SqlServer.NotQuery(sqlStr);
         }
 
         public int Delete(int cId)

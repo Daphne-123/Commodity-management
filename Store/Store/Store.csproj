@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Regitster.css" />
-    <Content Include="css\table.css" />
     <Content Include="First.aspx" />
     <Content Include="image\1.jpg" />
     <Content Include="image\3.jpg" />
@@ -80,14 +79,16 @@
     <Content Include="orderDel.aspx" />
     <Content Include="orderQuery.aspx" />
     <Content Include="phoneList.html" />
-    <Content Include="ProductList.html" />
+    <Content Include="pro-List\ProductListHTML.html" />
     <Content Include="Register.aspx" />
-    <Content Include="UpdateProductList.html" />
-    <Content Include="vipList.aspx" />
+    <Content Include="pro-List\UpdateProductList.html" />
+    <Content Include="css\tableCSS.css" />
+    <Content Include="vip-List\UpdateVipList.html" />
+    <Content Include="vip-List\vipList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DeleteProductListHandler.ashx.cs">
+    <Compile Include="pro-List\DeleteProductListHandler.ashx.cs">
       <DependentUpon>DeleteProductListHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="First.aspx.cs">
@@ -128,7 +129,7 @@
     <Compile Include="orderQuery.aspx.designer.cs">
       <DependentUpon>orderQuery.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ProductList.ashx.cs">
+    <Compile Include="pro-List\ProductList.ashx.cs">
       <DependentUpon>ProductList.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -139,23 +140,27 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UpdateProductListHandler.ashx.cs">
+    <Compile Include="pro-List\UpdateProductListHandler.ashx.cs">
       <DependentUpon>UpdateProductListHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="vipList.aspx.cs">
+    <Compile Include="vip-List\UpdateVipListHandler.ashx.cs">
+      <DependentUpon>UpdateVipListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="vip-List\vipList.aspx.cs">
       <DependentUpon>vipList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="vipList.aspx.designer.cs">
+    <Compile Include="vip-List\vipList.aspx.designer.cs">
       <DependentUpon>vipList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="PhoneListHandler.ashx" />
-    <Content Include="DeleteProductListHandler.ashx" />
+    <Content Include="pro-List\DeleteProductListHandler.ashx" />
     <None Include="packages.config" />
-    <Content Include="ProductList.ashx" />
-    <Content Include="UpdateProductListHandler.ashx" />
+    <Content Include="pro-List\ProductList.ashx" />
+    <Content Include="pro-List\UpdateProductListHandler.ashx" />
+    <Content Include="vip-List\UpdateVipListHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

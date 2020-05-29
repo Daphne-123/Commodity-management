@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Store
 {
-    public partial class vipList : System.Web.UI.Page
+    public partial class Reg : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

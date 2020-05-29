@@ -34,7 +34,6 @@ namespace Store
                 int sId = int.Parse(cId);
                 string html = File.ReadAllText(context.Request.MapPath("UpdateProductList.html"));
                 ProductInfo pro = clsBll.GetProductById(sId);
-
                 html = html.Replace("{@cId}", pro.cId.ToString()).Replace("{@cImgUrl}", pro.cImgUrl).Replace("{@cName}", pro.cName);
                 html = html.Replace("{@cNumber}", pro.cNumber.ToString()).Replace("{@cTime}", pro.cTime.ToShortDateString()).Replace("{@cDeptId}", pro.cDeptId.ToString());
                 context.Response.Write(html);
@@ -49,8 +48,7 @@ namespace Store
             string cNumber = context.Request.Form["cNumber"];
             string cTime = context.Request.Form["cTime"];
             string cDeptId = context.Request.Form["cDeptId"];
-
-            //1.调用StudentInfoBLL，完成修改的业务逻辑
+           
             ProductInfo pro = new ProductInfo();
             pro.cId = Convert.ToInt32(cId);
             pro.cImgUrl = cImgUrl;
