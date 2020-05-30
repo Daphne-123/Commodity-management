@@ -56,7 +56,7 @@ namespace Store
             vip.pJoinDate = Convert.ToDateTime(pJoinDate);
             if (vipBll.UpdateVip(vip))
             {
-                context.Response.Write("<script>alert('修改成功！');window.location='VipList.aspx'</script>");
+                context.Response.Write("<script>alert('修改成功！');window.location='vipList.aspx'</script>");
             }
         }
 

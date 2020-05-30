@@ -20,11 +20,37 @@ namespace Store
             VipGridView.DataSource = vipBll.GetVipList();
             VipGridView.DataBind();
         }
+
+        #region  修改信息
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
         protected string UpdateVipList(object pId)
         {
             return "<a href='UpdateVipListHandler.ashx?pId=" + pId.ToString() + "'>修改</a>";
         }
+        #endregion
 
+        #region  删除信息
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="pId"></param>
+        /// <returns></returns>
+        protected string DeleteVipList(object pId)
+        {
+            return "<a href='javascript:void(0)' onclick='doDeleteVip(" + pId.ToString() + ")'> 删除</a>";
+        }
+        #endregion
+
+        #region  导出
+        /// <summary>
+        /// 导出功能
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Button1_Click(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
@@ -56,7 +82,10 @@ namespace Store
             Response.Write(sb.ToString());
             Response.End();
         }
-     
+
+        #endregion
+        
+      
     }
-    
+
 }

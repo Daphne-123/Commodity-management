@@ -28,7 +28,7 @@ namespace StoreDAL
         /// <returns></returns>
         public vipInfo GetVipById(int id)
         {
-            string sql =  $"select pName,pGender,pAge,pJoinDate from Member where pId={id}";
+            string sql =  $"select pId, pName,pGender,pAge,pJoinDate from Member where pId={id}";
             
             DataSet ds = SqlServer.Query(sql);
             vipInfo vip = new vipInfo();

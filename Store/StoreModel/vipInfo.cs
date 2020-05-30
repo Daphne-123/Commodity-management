@@ -20,12 +20,14 @@ namespace StoreModel
             List<vipInfo> clsList = new List<vipInfo>();
             foreach (DataRow row in dt.Rows)
             {
-                vipInfo cls = new vipInfo();
-                cls.pId = Convert.ToInt32(row["pId"]);
-                cls.pName = row["pName"].ToString();
-                cls.pGender = row["pGender"].ToString();
-                cls.pAge = Convert.ToInt32(row["pAge"]);
-                cls.pJoinDate = Convert.ToDateTime(row["pJoinDate"]);
+                vipInfo cls = new vipInfo
+                {
+                    pId = Convert.ToInt32(row["pId"]),
+                    pName = row["pName"].ToString(),
+                    pGender = row["pGender"].ToString(),
+                    pAge = Convert.ToInt32(row["pAge"]),
+                    pJoinDate = Convert.ToDateTime(row["pJoinDate"])
+                };
                 clsList.Add(cls);
             }
             return clsList;
