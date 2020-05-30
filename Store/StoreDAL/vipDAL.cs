@@ -28,7 +28,7 @@ namespace StoreDAL
         /// <returns></returns>
         public vipInfo GetVipById(int id)
         {
-            string sql =  $"select pName,pGender,pAge,pJoinDate from Member where pId={id}";
+            string sql =  $"select pId, pName,pGender,pAge,pJoinDate from Member where pId={id}";
             
             DataSet ds = SqlServer.Query(sql);
             vipInfo vip = new vipInfo();
@@ -48,9 +48,9 @@ namespace StoreDAL
         /// <param name="vip"></param>
         /// <param name="pId"></param>
         /// <returns></returns>
-        public int AddVip(vipInfo vip, int pId)
+        public int AddVip(vipInfo vip)
         {
-            string sqlStr = $"insert into Member( pName,pGender,pAge,pJoinDate, pId) values ('{vip.pName}', '{vip.pGender}', '{vip.pAge}', '{vip.pJoinDate}', {pId})";
+            string sqlStr = $"insert into Member( pName,pGender,pAge,pJoinDate) values ('{vip.pName}', '{vip.pGender}', '{vip.pAge}', '{vip.pJoinDate}')";
 
             return SqlServer.NotQuery(sqlStr);
         }

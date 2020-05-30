@@ -21,9 +21,9 @@ namespace StoreBLL
         {
             return vipDal.GetVipById(id);
         }
-        public bool AddVip(vipInfo vip, int pId)
+        public bool AddVip(vipInfo vip)
         {
-            return vipDal.AddVip(vip,pId) > 0;
+            return vipDal.AddVip(vip) > 0;
         }
         public bool UpdateVip(vipInfo vip)
         {

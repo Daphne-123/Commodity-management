@@ -83,8 +83,8 @@
     <Content Include="Register.aspx" />
     <Content Include="pro-List\UpdateProductList.html" />
     <Content Include="css\tableCSS.css" />
-    <Content Include="vip-List\UpdateVipList.html" />
-    <Content Include="vip-List\vipList.aspx" />
+    <Content Include="vipList\UpdateVipList.html" />
+    <Content Include="vipList\vipList.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -143,14 +143,20 @@
     <Compile Include="pro-List\UpdateProductListHandler.ashx.cs">
       <DependentUpon>UpdateProductListHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="vip-List\UpdateVipListHandler.ashx.cs">
+    <Compile Include="vipList\DeleteVipListHandler.ashx.cs">
+      <DependentUpon>DeleteVipListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="vipList\InsertVipHandler.ashx.cs">
+      <DependentUpon>InsertVipHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="vipList\UpdateVipListHandler.ashx.cs">
       <DependentUpon>UpdateVipListHandler.ashx</DependentUpon>
     </Compile>
-    <Compile Include="vip-List\vipList.aspx.cs">
+    <Compile Include="vipList\vipList.aspx.cs">
       <DependentUpon>vipList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="vip-List\vipList.aspx.designer.cs">
+    <Compile Include="vipList\vipList.aspx.designer.cs">
       <DependentUpon>vipList.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -160,7 +166,9 @@
     <None Include="packages.config" />
     <Content Include="pro-List\ProductList.ashx" />
     <Content Include="pro-List\UpdateProductListHandler.ashx" />
-    <Content Include="vip-List\UpdateVipListHandler.ashx" />
+    <Content Include="vipList\DeleteVipListHandler.ashx" />
+    <Content Include="vipList\InsertVipHandler.ashx" />
+    <Content Include="vipList\UpdateVipListHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
