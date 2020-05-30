@@ -61,7 +61,7 @@ namespace StoreDAL
         /// <returns></returns>
         public int UpdateVip(vipInfo vip)
         {
-            string sqlStr = $"update Member set pName='{vip.pName}', pGender='{vip.pGender}', pAge='{vip.pAge}', pJoinDate='{vip.pJoinDate}' where cId={vip.pId}";
+            string sqlStr = $"update Member set pName='{vip.pName}', pGender='{vip.pGender}', pAge='{vip.pAge}', pJoinDate='{vip.pJoinDate}' where pId={vip.pId}";
 
             return SqlServer.NotQuery(sqlStr);
         }
