@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Store.vip_List
+namespace Store
 {
     /// <summary>
-    /// InsertVipHandler 的摘要说明
+    /// ValidateView 的摘要说明
     /// </summary>
-    public class InsertVipHandler : IHttpHandler
+    public class ValidateView : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
         {
-            context.Response.ContentType = "text/plain";
-            context.Response.Write("Hello World");
+              StoreUtility.ValidateCode  vc = new StoreUtility.ValidateCode(context);
+              string code = vc.GetCode(4);
+              vc.CreateValidateImage(code, 100, 35);
         }
 
         public bool IsReusable

@@ -13,17 +13,12 @@ namespace StoreBLL
     /// </summary>
     public class UserBLL
     {
-        public static bool Add(UserModel user)
+        private UserDAL userDal = new UserDAL();
+
+        public bool AddAddUser(UserInfo user)
         {
-            return  UserDAL.Add(user);
+            return userDal.AddUser(user)>0;
         }
-        /*public static bool Search(string username)
-        {
-            return UserDAL.Search(username);
-        }*/
-        public static bool Login(string username,string password)
-        {
-            return UserDAL.Login(username,password);
-        }
+       
     }
 }

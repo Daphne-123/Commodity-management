@@ -73,14 +73,12 @@
     <Content Include="image\1.jpg" />
     <Content Include="image\3.jpg" />
     <Content Include="image\logo.png" />
-    <Content Include="js\Regitster.js" />
     <Content Include="Login.aspx" />
     <Content Include="Manage.aspx" />
-    <Content Include="orderDel.aspx" />
-    <Content Include="orderQuery.aspx" />
+    <Content Include="orderList\orderQuery.aspx" />
     <Content Include="phoneList.html" />
     <Content Include="pro-List\ProductListHTML.html" />
-    <Content Include="Register.aspx" />
+    <Content Include="Regist.aspx" />
     <Content Include="pro-List\UpdateProductList.html" />
     <Content Include="css\tableCSS.css" />
     <Content Include="vipList\UpdateVipList.html" />
@@ -88,6 +86,12 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="orderList\DeleteOrderHandler.ashx.cs">
+      <DependentUpon>DeleteOrderHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="orderList\InsertOrderHandler.ashx.cs">
+      <DependentUpon>InsertOrderHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="pro-List\DeleteProductListHandler.ashx.cs">
       <DependentUpon>DeleteProductListHandler.ashx</DependentUpon>
     </Compile>
@@ -115,33 +119,29 @@
     <Compile Include="Manage.aspx.designer.cs">
       <DependentUpon>Manage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="orderDel.aspx.cs">
-      <DependentUpon>orderDel.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="orderDel.aspx.designer.cs">
-      <DependentUpon>orderDel.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="orderQuery.aspx.cs">
+    <Compile Include="orderList\orderQuery.aspx.cs">
       <DependentUpon>orderQuery.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="orderQuery.aspx.designer.cs">
+    <Compile Include="orderList\orderQuery.aspx.designer.cs">
       <DependentUpon>orderQuery.aspx</DependentUpon>
     </Compile>
     <Compile Include="pro-List\ProductList.ashx.cs">
       <DependentUpon>ProductList.ashx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="Regist.aspx.cs">
+      <DependentUpon>Regist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
+    <Compile Include="Regist.aspx.designer.cs">
+      <DependentUpon>Regist.aspx</DependentUpon>
     </Compile>
     <Compile Include="pro-List\UpdateProductListHandler.ashx.cs">
       <DependentUpon>UpdateProductListHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ValidateView.ashx.cs">
+      <DependentUpon>ValidateView.ashx</DependentUpon>
     </Compile>
     <Compile Include="vipList\DeleteVipListHandler.ashx.cs">
       <DependentUpon>DeleteVipListHandler.ashx</DependentUpon>
@@ -163,12 +163,15 @@
   <ItemGroup>
     <Content Include="PhoneListHandler.ashx" />
     <Content Include="pro-List\DeleteProductListHandler.ashx" />
+    <Content Include="orderList\DeleteOrderHandler.ashx" />
+    <Content Include="orderList\InsertOrderHandler.ashx" />
     <None Include="packages.config" />
     <Content Include="pro-List\ProductList.ashx" />
     <Content Include="pro-List\UpdateProductListHandler.ashx" />
     <Content Include="vipList\DeleteVipListHandler.ashx" />
     <Content Include="vipList\InsertVipHandler.ashx" />
     <Content Include="vipList\UpdateVipListHandler.ashx" />
+    <Content Include="ValidateView.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
