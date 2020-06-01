@@ -32,7 +32,7 @@ namespace Store
                 sbTrs.Append("<td>" + cls.cImgUrl + "</td>");
                 sbTrs.Append("<td>" + cls.cName + "</td>");
                 sbTrs.Append("<td>" + cls.cNumber.ToString() + "</td>");
-                sbTrs.Append("<td>" + cls.cTime.ToString() + "</td>");
+                sbTrs.Append("<td>" + cls.cTime.ToString("yyyy-MM-dd") + "</td>");
                 sbTrs.Append("<td>" + cls.cDeptId.ToString() + "</td>");
                 sbTrs.Append("<td><a href='UpdateProductListHandler.ashx?cId=" + cls.cId + "'>修改</a> <a href='javascript:void(0)' onclick='doDelete(" + cls.cId + ")'> 删除</a></td>");
                 sbTrs.Append("</tr>");

@@ -32,11 +32,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="cheader col-md-7">
+        <div class="cheader col-md-9">
             <span class="text-center h2 font-weight-bold ctitle">会 员 信 息</span>
             <asp:Button ID="Button1" runat="server" class="btn btn-success cbtn" OnClick="Button1_Click" Text="导  出" />
             <input type="button" id="code" onclick="printer()" class="btn btn-warning cbtn" value="打  印" />
-            <button type="button" class="btn btn-info btn-sm add-btn float-right" data-toggle="modal" data-target="#exampleModal">添  加 </button>
+            <button type="button" class="btn btn-info cbtn" data-toggle="modal" data-target="#exampleModal">添  加 </button>
         </div>
         <div id="PrintArea">
             <asp:GridView ID="VipGridView" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" AutoGenerateColumns="False">
@@ -46,7 +46,7 @@
                     <asp:BoundField DataField="pName" HeaderText="会员姓名" />
                     <asp:BoundField DataField="pGender" HeaderText="会员性别" />
                     <asp:BoundField DataField="pAge" HeaderText="会员年龄" />
-                    <asp:BoundField DataField="pJoinDate" HeaderText="入会日期" />
+                    <asp:BoundField DataField="pJoinDate" HeaderText="入会日期" DataFormatString="{0:yyyy-MM-dd}" />
 
                     <asp:TemplateField HeaderText="操  作">
                         <ItemTemplate>

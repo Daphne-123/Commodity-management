@@ -10,7 +10,7 @@ namespace StoreUtility
     {
         public static bool IsNumber(string str)
         {
-           
+
             bool re = true;
             for (int i = 0; i < str.Length; i++)
             {

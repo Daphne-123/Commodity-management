@@ -131,9 +131,7 @@
               </button>
           </div>
           <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-            <input type=button value="订单查询" onclick=" iframe.location='orderQuery.aspx'" class="card-body Navigation-option ops"/>
-
-              <input type=button value="删除订单" onclick=" iframe.location='orderDel.aspx'" class="card-body Navigation-option ops"/>
+            <input type=button value="订单列表" onclick=" iframe.location='orderList/orderQuery.aspx'" class="card-body Navigation-option ops"/>
           </div>
         </div>
         <div class="Navigation">
@@ -148,7 +146,6 @@
           </div>
           <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
              <input type=button value="会员列表" onclick=" iframe.location='vipList/vipList.aspx'" class="card-body Navigation-option ops"/> 
-             <input type=button value="添加新会员" onclick=" iframe.location='vipList/InsertVipHandler.ashx'" class="card-body Navigation-option ops"/> 
           </div>
         </div>
         <div class="Navigation">

@@ -23,9 +23,9 @@ namespace Store
             string username = this.username.Text;
             string password = this.password.Text;
 
-            if (UserBLL.Login(username, password)==true){
+           /* if (UserBLL.Login(username, password)==true){
                  Response.Write("<script>alert('登录成功!');window.location='Manage.aspx';</script>");
-            }
+            }*/
         }
     }
 }
