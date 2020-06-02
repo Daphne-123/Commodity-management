@@ -76,6 +76,7 @@
     <Content Include="image\1.jpg" />
     <Content Include="image\3.jpg" />
     <Content Include="image\logo.png" />
+    <Content Include="js\ajaxfileupload.js" />
     <Content Include="js\echarts.min.js" />
     <Content Include="Login.aspx" />
     <Content Include="Manage.aspx" />
@@ -197,7 +198,9 @@
       <Name>StoreUtility</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="UploadFile\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

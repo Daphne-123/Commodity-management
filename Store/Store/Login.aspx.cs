@@ -30,10 +30,10 @@ namespace Store
                     {
                         //设置cookie的有效期为1分钟。
                         HttpCookie cookie = new HttpCookie("uName", username);
-                        cookie.Expires = DateTime.Now.AddMinutes(5);
+                        cookie.Expires = DateTime.Now.AddMinutes(30);
                         Response.AppendCookie(cookie);
 
-                        Response.Write("<script>alert('登录成功');window.location='Manage.aspx';</script>");
+                        Response.Write("<script>window.location='Manage.aspx';</script>");
                     }
                     else
                     {

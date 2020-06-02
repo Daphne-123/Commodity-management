@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <form action="UpdateProductListHandler.ashx" method="post">
+    <form action="UpdateProductListHandler.ashx" method="post" enctype="multipart/form-data">
         <table class="ctable">
             <caption>修改商品信息</caption>
             <tr>
@@ -38,7 +38,7 @@
             </tr>
             <tr>
                 <td>商品图片：</td>
-                <td><input type="text" name="cImgUrl" value="{@cImgUrl}" /></td>
+                <td>{@cImgUrl}</td>
             </tr>
             <tr>
                 <td>商品名字：</td>

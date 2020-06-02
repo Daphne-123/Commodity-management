@@ -18,7 +18,7 @@ namespace StoreDAL
         /// <returns></returns>
         public List<orderInfo> GetOrderList()
         {
-            string sql = "select orderId,cName,cNumber,orderDate,orderAddress from OrderList";
+            string sql = "select orderId,cName,cNumber,orderDate,orderAddress from OrderList order by orderDate;";
             return orderInfo.TableToList(DBHelper.GetDataSet(sql).Tables[0]);
         }
         /// <summary>

@@ -29,11 +29,11 @@ namespace Store
             {
                 sbTrs.Append("<tr>");
                 sbTrs.Append("<td>" + cls.cId.ToString() + "</td>");
-                sbTrs.Append("<td>" + cls.cImgUrl + "</td>");
+                sbTrs.Append(cls.cImgUrl.Trim() != "" ? "<td><a href=\"" + cls.cImgUrl + "\">点击查看</a></td>" : "<td>暂无图片</td>");
                 sbTrs.Append("<td>" + cls.cName + "</td>");
                 sbTrs.Append("<td>" + cls.cNumber.ToString() + "</td>");
                 sbTrs.Append("<td>" + cls.cTime.ToString("yyyy-MM-dd") + "</td>");
-                sbTrs.Append("<td>" + cls.cDeptId.ToString() + "</td>");
+                sbTrs.Append("<td>" + cls.DeptName.ToString() + "</td>");
                 sbTrs.Append("<td><a href='UpdateProductListHandler.ashx?cId=" + cls.cId + "'>修改</a> <a href='javascript:void(0)' onclick='doDelete(" + cls.cId + ")'> 删除</a></td>");
                 sbTrs.Append("</tr>");
             }
