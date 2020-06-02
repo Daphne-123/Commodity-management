@@ -65,16 +65,16 @@
 		    </div>
 		    <div class="form-group">
 		        <label for="exampleInputPassword2">确认密码:</label>
-		        <input type="password" name="cfpwd" class="form-control" id="pwd" placeholder="请重新输入密码" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')"  oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')" />		        
+		        <input type="password" name="cfpwd" class="form-control" id="cfmpwd" onchange="myFunction()" placeholder="请重新输入密码" onkeyup="value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')"  oncontextmenu = "value=value.replace(/[^\a-\z\A-\Z0-9]/g,'')" />		        
+                  <small class="worning" id="pwdWorning">⚠：前后两次密码输入不一样，请重新输入！</small>
             </div>
             <div class="form-group">
 		        <label for="exampleInputEmail2">验证码:</label><br/>
 		        <div class="container">
 		    	    <div class="row">
-		    		    <input type = "text" id = "txtVcode" name="txtVcode" class="form-control col-sm-8" style="text-transform: uppercase;" placeholder="请输入验证码"/> 
+		    		    <input type = "text" id = "txtVcode" name="txtVcode" class="form-control col-sm-8" placeholder="请输入验证码"/> 
 		    		    <div class="col-sm-1"></div>
 		    	        <img id="vCodeImg" src="ValidateView.ashx?num=1" class="verification-Code col-sm-3 verification-Code" />
-                        <%--<small  class="worning vCode-tips"><%=codeWrong %></small>--%>
                     </div>
 		        </div>
 		    </div>
@@ -97,8 +97,18 @@
             $('empWorning').style.display = "none";
         }
     }
-     $('vCodeImg').onclick = function () {
-                this.src = this.src+"1";
-            }
+    function myFunction(){
+     	var password=document.getElementById("password").value;
+		var cfmpwd=document.getElementById("cfmpwd").value;
+        if (password != cfmpwd) {
+            $('pwdWorning').style.display = "block";
+        }
+        else {
+            $('pwdWorning').style.display = "none";
+        }
+    }
+    $('vCodeImg').onclick = function () {
+            this.src = this.src+"1";
+        }
 </script>
 
