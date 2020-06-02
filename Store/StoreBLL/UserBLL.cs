@@ -19,6 +19,10 @@ namespace StoreBLL
         {
             return userDal.AddUser(user)>0;
         }
-       
+
+        public bool LoginUser(string userName, string passWord)
+        {
+            return userDal.LoginUser(userName, passWord);
+        }
     }
 }

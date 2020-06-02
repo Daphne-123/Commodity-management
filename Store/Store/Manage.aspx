@@ -89,7 +89,8 @@
                <span>商家后台管理系统</span>
            </div>
            <div class="head-right">
-             <span>当前用户：胡欣哲</span>
+             <span>当前用户：<%=name %></span>
+              
            </div>
         </div>
     </header>
@@ -117,7 +118,7 @@
               </button>
           </div>
           <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-               <input type=button value="商品列表" onclick=" iframe.location='pro-List/ProductList.ashx'" class="card-body Navigation-option  ops"/>
+               <input type=button value="商品列表" onclick=" iframe.location='proList/ProductList.ashx'" class="card-body Navigation-option  ops"/>
           </div>
         </div>
         <div class="Navigation">

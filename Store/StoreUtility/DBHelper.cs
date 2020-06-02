@@ -13,7 +13,7 @@ namespace StoreUtility
     {
         private static string connString;
 
-         static DBHelper()
+        static DBHelper()
         {
              connString = ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
         }
@@ -40,13 +40,24 @@ namespace StoreUtility
                 }
             }
         }
+         public static object ExecuteScalar(string sql)
+        {
+            using (SqlConnection connection = new SqlConnection(connString))
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(sql, connection))
+                {
+                    return cmd.ExecuteScalar();
+                }
+            }
+        }
         /// <summary>
         /// 获取一个值(获取数据名，获取出生日期等等，数据类型不一样，故用object)
         /// </summary>
         /// <param name="cmdText"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>  
-        public static T ExcuteScalar<T>(string cmdText, params SqlParameter[] parameters)
+        public static T ExcuteScalar<T>(string cmdText, CommandType storedProcedure, params SqlParameter[] parameters)
         {
             using (SqlConnection connection = new SqlConnection(connString))
             {
