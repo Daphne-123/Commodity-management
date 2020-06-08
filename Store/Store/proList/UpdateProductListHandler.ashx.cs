@@ -35,7 +35,7 @@ namespace Store
                 string html = File.ReadAllText(context.Request.MapPath("UpdateProductList.html"));
                 ProductInfo pro = clsBll.GetProductById(sId);
                 html = html.Replace("{@cId}", pro.cId.ToString()).Replace("{@cImgUrl}", pro.cImgUrl.Trim() == "" ? "<input type=\"file\" name=\"cImgUrl\" />" : pro.cImgUrl + "<input type=\"file\" name=\"cImgUrl\" />").Replace("{@cName}", pro.cName);
-                html = html.Replace("{@cNumber}", pro.cNumber.ToString()).Replace("{@cTime}", pro.cTime.ToString("yyyy-MM-dd")).Replace("{@cDeptId}", pro.cDeptId.ToString());
+                html = html.Replace("{@cNumber}", pro.cNumber.ToString()).Replace("{@cTime}", pro.cTime.ToString("yyyy-MM-dd")).Replace("{@cDeptId}", pro.cDeptId.ToString()).Replace("{@cPrice}", pro.Price.ToString());
                 context.Response.Write(html);
             }
         }
@@ -47,6 +47,7 @@ namespace Store
             string cNumber = context.Request.Form["cNumber"];
             string cTime = context.Request.Form["cTime"];
             string cDeptId = context.Request.Form["cDeptId"];
+            string cPrice = context.Request.Form["cPrice"];
 
             HttpFileCollection files = context.Request.Files;
             //设置文件名
@@ -62,6 +63,7 @@ namespace Store
             pro.cNumber = Convert.ToInt32(cNumber);
             pro.cTime = Convert.ToDateTime(cTime);
             pro.cDeptId = Convert.ToInt32(cDeptId);
+            pro.Price = Convert.ToDouble(cPrice);
             if (clsBll.Update(pro))
             {
                 context.Response.Write("<script>alert('修改成功！');window.location='ProductList.ashx'</script>");

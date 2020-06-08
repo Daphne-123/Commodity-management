@@ -16,6 +16,7 @@ namespace StoreModel
         public DateTime cTime { get; set; }
         public int cDeptId { get; set; }
         public string DeptName { get; set; }
+        public double Price { get; set; }
 
         public static List<ProductInfo> TableToList(DataTable dt)
         {
@@ -30,6 +31,7 @@ namespace StoreModel
                 cls.cTime = Convert.ToDateTime(row["cTime"]);
                 cls.cDeptId = Convert.ToInt32(row["cDeptId"]);
                 cls.DeptName = row["tName"].ToString();
+                cls.Price = Convert.ToDouble(row["cPrice"]);
                 clsList.Add(cls);
             }
             return clsList;

@@ -29,37 +29,41 @@
 </head>
 <body>
     <form action="UpdateProductListHandler.ashx" method="post" enctype="multipart/form-data">
-        <table class="ctable">
-            <caption>修改商品信息</caption>
-            <tr>
-                <td>商品号：</td>
-                <td>{@cId}</td>
-                <input type="hidden" name="cId" value="{@cId}" />
-            </tr>
-            <tr>
-                <td>商品图片：</td>
-                <td>{@cImgUrl}</td>
-            </tr>
-            <tr>
-                <td>商品名字：</td>
-                <td><input type="text" name="cName" value="{@cName}" /></td>
-            </tr>
-            <tr>
-                <td>商品数量：</td>
-                <td><input type="text" name="cNumber" value="{@cNumber}" /></td>
-            </tr>
-            <tr>
-                <td>上架日期：</td>
-                <td><input type="text" name="cTime" value="{@cTime}" /></td>
-            </tr>
-            <tr>
-                <td>所属厂家：</td>
-                <td><input type="text" name="cDeptId" value="{@cDeptId}" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><input type="submit" class="cbtn" value="提    交" /></td>
-            </tr>
-        </table>
+      <table class="ctable">
+        <caption>修改商品信息</caption>
+        <tr>
+          <td>商品号：</td>
+          <td>{@cId}</td>
+          <input type="hidden" name="cId" value="{@cId}" />
+        </tr>
+        <tr>
+          <td>商品图片：</td>
+          <td>{@cImgUrl}</td>
+        </tr>
+        <tr>
+          <td>商品名字：</td>
+          <td><input type="text" name="cName" value="{@cName}" /></td>
+        </tr>
+        <tr>
+          <td>商品数量：</td>
+          <td><input type="text" name="cNumber" value="{@cNumber}" /></td>
+        </tr>
+        <tr>
+          <td>上架日期：</td>
+          <td><input type="date" name="cTime" value="{@cTime}" /></td>
+        </tr>
+        <tr>
+          <td>所属厂家：</td>
+          <td><input type="text" name="cDeptId" value="{@cDeptId}" /></td>
+        </tr>
+        <tr>
+          <td>售价：</td>
+          <td><input type="text" name="cPrice" value="{@cPrice}" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" class="cbtn" value="提    交" /></td>
+        </tr>
+      </table>
     </form>
 </body>
 </html>

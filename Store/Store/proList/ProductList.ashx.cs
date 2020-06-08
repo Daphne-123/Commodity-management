@@ -28,13 +28,14 @@ namespace Store
             foreach (ProductInfo cls in clsList)
             {
                 sbTrs.Append("<tr>");
-                sbTrs.Append("<td>" + cls.cId.ToString() + "</td>");
+                sbTrs.Append("<th>" + cls.cId.ToString() + "</th>");
                 sbTrs.Append(cls.cImgUrl.Trim() != "" ? "<td><a href=\"" + cls.cImgUrl + "\">点击查看</a></td>" : "<td>暂无图片</td>");
                 sbTrs.Append("<td>" + cls.cName + "</td>");
                 sbTrs.Append("<td>" + cls.cNumber.ToString() + "</td>");
                 sbTrs.Append("<td>" + cls.cTime.ToString("yyyy-MM-dd") + "</td>");
                 sbTrs.Append("<td>" + cls.DeptName.ToString() + "</td>");
-                sbTrs.Append("<td><a href='UpdateProductListHandler.ashx?cId=" + cls.cId + "'>修改</a> <a href='javascript:void(0)' onclick='doDelete(" + cls.cId + ")'> 删除</a></td>");
+                sbTrs.Append("<td>" + cls.Price.ToString() + "</td>");
+                sbTrs.Append("<td><a class=\"btn btn-outline-primary btn-sm\" href='UpdateProductListHandler.ashx?cId=" + cls.cId + "'>修改</a> <a class=\"btn btn-outline-danger btn-sm\" href='javascript:void(0)' onclick='doDelete(" + cls.cId + ")'> 删除</a></td>");
                 sbTrs.Append("</tr>");
             }
             //4.把生成字符串，嵌入到静态页的tbody标签里

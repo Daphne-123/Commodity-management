@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Regitster.css" />
     <Content Include="First.aspx" />
@@ -82,6 +83,7 @@
     <Content Include="Manage.aspx" />
     <Content Include="orderList\orderQuery.aspx" />
     <Content Include="phoneList.html" />
+    <Content Include="proList\AddProduct.aspx" />
     <Content Include="proList\ProductListHTML.html" />
     <Content Include="Regist.aspx" />
     <Content Include="proList\UpdateProductList.html" />
@@ -96,6 +98,16 @@
     </Compile>
     <Compile Include="orderList\InsertOrderHandler.ashx.cs">
       <DependentUpon>InsertOrderHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="proList\AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="proList\AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="proList\AddProductHandler.ashx.cs">
+      <DependentUpon>AddProductHandler.ashx</DependentUpon>
     </Compile>
     <Compile Include="proList\DeleteProductListHandler.ashx.cs">
       <DependentUpon>DeleteProductListHandler.ashx</DependentUpon>
@@ -177,6 +189,7 @@
     <Content Include="vipList\InsertVipHandler.ashx" />
     <Content Include="vipList\UpdateVipListHandler.ashx" />
     <Content Include="ValidateView.ashx" />
+    <Content Include="proList\AddProductHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -50,7 +50,7 @@ namespace StoreDAL
         /// <returns></returns>
         public int AddVip(vipInfo vip)
         {
-            string sqlStr = $"insert into Member( pName,pGender,pAge,pJoinDate) values ('{vip.pName}', '{vip.pGender}', '{vip.pAge}', '{vip.pJoinDate}')";
+            string sqlStr = $"insert into Member( pName,pGender,pAge,pJoinDate) values ('{vip.pName}', '{vip.pGender}', '{vip.pAge}', '{vip.pJoinDate.ToString("yyyy-MM-dd")}')";
 
             return SqlServer.NotQuery(sqlStr);
         }
@@ -61,7 +61,7 @@ namespace StoreDAL
         /// <returns></returns>
         public int UpdateVip(vipInfo vip)
         {
-            string sqlStr = $"update Member set pName='{vip.pName}', pGender='{vip.pGender}', pAge='{vip.pAge}', pJoinDate='{vip.pJoinDate}' where pId={vip.pId}";
+            string sqlStr = $"update Member set pName='{vip.pName}', pGender='{vip.pGender}', pAge='{vip.pAge}', pJoinDate='{vip.pJoinDate.ToString("yyyy-MM-dd")}' where pId={vip.pId}";
 
             return SqlServer.NotQuery(sqlStr);
         }

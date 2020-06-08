@@ -14,14 +14,14 @@ namespace StoreDAL
     {
         public List<ProductInfo> GetProductList()
         {
-            string sql = "select cId,cImgUrl,cName,cNumber,cTime,cDeptId,tName from Commodity left join Complaints on cDeptId = tId;";
+            string sql = "select cId,cImgUrl,cName,cNumber,cTime,cDeptId,cPrice,tName from Commodity left join Complaints on cDeptId = tId;";
             return ProductInfo.TableToList(DBHelper.GetDataSet(sql).Tables[0]);
         }
 
         public ProductInfo GetProductById(int id)
         {
             string sql = //"select cId,cImgUrl,cName,cNumber,cTime,cDeptId from Commodity cid = @id";
-                $"select cId,cImgUrl,cName,cNumber,cTime,cDeptId,tName from Commodity left join Complaints on cDeptId = tId where cid={id}";
+                $"select cId,cImgUrl,cName,cNumber,cTime,cDeptId,cPrice,tName from Commodity left join Complaints on cDeptId = tId where cid={id}";
 
             //SqlParameter sp = new SqlParameter("@id", SqlDbType.Int) { Value = id };
             //DataSet ds = DBHelper.GetDataSet(sql, sp);
@@ -51,7 +51,7 @@ namespace StoreDAL
         }*/
         public int Update(ProductInfo cls)
         {
-            string sqlStr = $"update Commodity set cImgUrl='{cls.cImgUrl}', cName='{cls.cName}', cNumber='{cls.cNumber}', cTime='{cls.cTime.ToString("yyyy-MM-dd")}', cDeptId='{cls.cDeptId}' where cId={cls.cId}";
+            string sqlStr = $"update Commodity set cImgUrl='{cls.cImgUrl}', cName='{cls.cName}', cNumber='{cls.cNumber}', cTime='{cls.cTime.ToString("yyyy-MM-dd")}', cDeptId='{cls.cDeptId}',cPrice={cls.Price} where cId={cls.cId}";
 
             return SqlServer.NotQuery(sqlStr);
         }
@@ -61,6 +61,13 @@ namespace StoreDAL
             string sql = "delete from Commodity where cId = @id";
             SqlParameter sp = new SqlParameter("@id", SqlDbType.Int) { Value = cId };
             return DBHelper.ExcuteNonQuery(sql, sp);
+        }
+
+        public int Insert(ProductInfo product)
+        {
+            string sqlStr = $"insert into Commodity(cImgUrl,cName,cNumber,cTime,cDeptId,cPrice) values('{product.cImgUrl}','{product.cName}',{product.cNumber},'{product.cTime.ToString("yyyy-MM-dd")}',{product.cDeptId},{product.Price})";
+
+            return SqlServer.NotQuery(sqlStr);
         }
     }
 }

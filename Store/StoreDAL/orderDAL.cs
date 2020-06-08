@@ -48,7 +48,7 @@ namespace StoreDAL
         /// <returns></returns>
         public int AddOrder(orderInfo order)
         {
-            string sqlStr = $"insert into OrderList ( cName,cNumber,orderDate,orderAddress) values ('{order.cName}', '{order.cNumber}', '{order.orderDate}', '{order.orderAddress}')";
+            string sqlStr = $"insert into OrderList ( cName,cNumber,orderDate,orderAddress) values ('{order.cName}', '{order.cNumber}', '{order.orderDate.ToString("yyyy-MM-dd")}', '{order.orderAddress}')";
 
             return SqlServer.NotQuery(sqlStr);
         }

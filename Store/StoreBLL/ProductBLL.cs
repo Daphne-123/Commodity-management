@@ -28,5 +28,9 @@ namespace StoreBLL
         {
             return clsDal.Delete(stuId) > 0;
         }
+        public bool Insert(ProductInfo product)
+        {
+            return clsDal.Insert(product) > 0;
+        }
     }
 }
